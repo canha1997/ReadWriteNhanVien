@@ -32,7 +32,7 @@ public class QuanLyNhanVien implements iNhanVien
         BufferedWriter bw = null;
         try
         {
-           fw=new FileWriter(fileName,true);
+           fw=new FileWriter(fileName,true);  ////append: de chi dinh noi dung khong de len file cu
            bw=new BufferedWriter(fw);
            for(NhanVien str:nhanVienList) {
                bw.write("Ten nhan vien la: "+str.getTen()+"\n");
