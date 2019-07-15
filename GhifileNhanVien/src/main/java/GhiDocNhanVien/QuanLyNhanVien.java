@@ -118,5 +118,20 @@ public class QuanLyNhanVien implements iNhanVien
         }
 
     }
+
+    @Override
+    public void chinhSuaNhanVien() {
+        BufferedReader reader;
+        try {
+
+
+            reader.close();
+        }
+        catch(Exception e)
+        {
+            System.err.println(e);
+        }
+
     }
+}
 
