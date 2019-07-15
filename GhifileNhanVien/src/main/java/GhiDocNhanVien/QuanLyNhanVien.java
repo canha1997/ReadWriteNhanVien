@@ -5,6 +5,8 @@ import model.NhanVien;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Hello world!
@@ -16,13 +18,21 @@ public class QuanLyNhanVien implements iNhanVien
     @Override
     public void nhapNhanVien(ArrayList <NhanVien> nhanVienList) {
         String fileName="C:\\lap trinh Java tai lieu\\bai tap ve nha\\NhanVien.txt";
+        Pattern p= Pattern.compile("(F|M)");
         NhanVien nhanvien=new NhanVien();
         System.out.println("Moi ban nhap ten nhan vien");
         nhanvien.setTen(scanner.nextLine());
         System.out.println("Moi ban nhap Id nhan vien");
         nhanvien.setID(scanner.nextLine());
-        System.out.println("Moi ban nhap gioi tinh: (F/M)");
-        nhanvien.setGioiTinh(scanner.nextLine());
+        while (true) {
+            System.out.println("Moi ban nhap gioi tinh: (F/M)");
+            nhanvien.setGioiTinh(scanner.nextLine());
+            Matcher matcher=p.matcher(nhanvien.getGioiTinh());
+            if(matcher.find())
+            {
+                break;
+            }
+        }
         System.out.println("Moi ban nhap luong nhan vien");
         nhanvien.setLuong(scanner.nextInt());
         scanner.nextLine();
