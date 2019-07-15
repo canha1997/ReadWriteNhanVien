@@ -22,8 +22,30 @@ public class QuanLyNhanVien implements iNhanVien
         NhanVien nhanvien=new NhanVien();
         System.out.println("Moi ban nhap ten nhan vien");
         nhanvien.setTen(scanner.nextLine());
-        System.out.println("Moi ban nhap Id nhan vien");
-        nhanvien.setID(scanner.nextLine());
+
+        while (true) {
+            int flags=0;
+            System.out.println("Moi ban nhap Id nhan vien");
+            String test=scanner.nextLine();
+            for(NhanVien nhanVien : nhanVienList) {
+                if(nhanVien.getID().equals(test))
+                {
+                    flags=1;
+                    break;
+                }
+            }
+
+            if(flags==1)
+            {
+                System.out.println("ID Nhan vien bi trung, xin hay nhap lai");
+                continue;
+            }
+            else
+            {
+             nhanvien.setID(test);
+             break;
+            }
+        }
         while (true) {
             System.out.println("Moi ban nhap gioi tinh: (F/M)");
             nhanvien.setGioiTinh(scanner.nextLine());
