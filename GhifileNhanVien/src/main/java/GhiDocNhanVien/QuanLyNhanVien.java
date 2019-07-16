@@ -66,12 +66,17 @@ public class QuanLyNhanVien implements iNhanVien
         {
            fw=new FileWriter(fileName,true);  ////append: de chi dinh noi dung khong de len file cu
            bw=new BufferedWriter(fw);
-           for(NhanVien str:nhanVienList) {
-               bw.write("Ten nhan vien la: "+str.getTen()+"\n");
-               bw.write("ID cua nhan vien: "+str.getID()+"\n");
-               bw.write("Gioi tinh la: "+str.getGioiTinh()+"\n");
-               bw.write("Luong cua nhan vien la: "+str.getLuong()+"\n");
-           }
+
+
+               bw.write("nhan vien"+"\n");
+               bw.write("Ten nhan vien la: "+nhanvien.getTen()+"\n");
+               bw.write("ID cua nhan vien: "+nhanvien.getID()+"\n");
+               bw.write("Gioi tinh la: "+nhanvien.getGioiTinh()+"\n");
+               bw.write("Luong cua nhan vien la: "+nhanvien.getLuong()+"\n");
+               bw.write("end\n");
+
+
+
             bw.close();
             System.out.println("Hoan thanh");
         }
@@ -105,6 +110,7 @@ public class QuanLyNhanVien implements iNhanVien
 
             reader=new BufferedReader(new FileReader("C:\\lap trinh Java tai lieu\\bai tap ve nha\\NhanVien.txt"));
             String line=reader.readLine();
+
             while (line !=null)
             {
                 System.out.println(line);
@@ -120,17 +126,12 @@ public class QuanLyNhanVien implements iNhanVien
     }
 
     @Override
-    public void chinhSuaNhanVien() {
-        BufferedReader reader;
-        try {
+    public void chinhSuaNhanVien(ArrayList <NhanVien> nhanVienList) {
+        int flags=0;
+        System.out.println("Nhap Id nhan vien muon chinh sua:");
+        String ID=scanner.nextLine();
 
 
-            reader.close();
-        }
-        catch(Exception e)
-        {
-            System.err.println(e);
-        }
 
     }
 }

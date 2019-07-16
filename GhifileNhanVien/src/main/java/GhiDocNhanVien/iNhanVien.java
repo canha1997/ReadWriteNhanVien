@@ -8,5 +8,5 @@ public interface iNhanVien {
 public void nhapNhanVien(ArrayList <NhanVien> nhanVienList);
 public void xoaDanhSachNhanVien();
 public void hienThiNhanVien();
-public void chinhSuaNhanVien();
+public void chinhSuaNhanVien(ArrayList <NhanVien> nhanVienList);
 }

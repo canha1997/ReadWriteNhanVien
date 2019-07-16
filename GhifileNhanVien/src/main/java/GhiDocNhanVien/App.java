@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args)
     {
-
-      NhanVienQuanLy();
+      int i=0;
+      NhanVienQuanLy(i);
 
     }
-    public static void NhanVienQuanLy()
+    public static void NhanVienQuanLy(int i)
     {
         ArrayList NhanVienList=new ArrayList();
         QuanLyNhanVien quanLyNhanVien=new QuanLyNhanVien();
@@ -37,7 +37,7 @@ public class App {
                     break;
                 case 3: quanLyNhanVien.xoaDanhSachNhanVien();
                     break;
-                case 4:quanLyNhanVien.chinhSuaNhanVien();
+                case 4:quanLyNhanVien.chinhSuaNhanVien(NhanVienList);
                     break;
                 case 5:
                     flag=1;
